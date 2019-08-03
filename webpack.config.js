@@ -22,19 +22,11 @@ module.exports = {
         }
       },
       {
-        test: /\.s?css/,
+        test: /\.scss/,
         use: [
           'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 2
-            },
-          },
-          // 'postcss-loader',
-          {
-            loader: 'sass-loader'
-          }
+          'css-loader', 
+          'sass-loader'
         ]
       }
     ]
