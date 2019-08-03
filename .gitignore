@@ -1,3 +1,5 @@
 # security configration
 config
 node_modules
+.vscode
+dist
