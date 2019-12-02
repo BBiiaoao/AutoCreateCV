@@ -15,7 +15,6 @@ export default class ShowPDF extends React.Component {
     console.log(parseInt(e));
     this.setState({ type: parseInt(e)});
     console.log(this.state);
-
   }
 
   buttonChanged = e => {

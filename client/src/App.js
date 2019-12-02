@@ -1,22 +1,17 @@
 import React from 'react';
-import ShowPDF from '../src/components/showPDF/showPDF'
+import { Form } from 'antd';
+import ShowPDF from '../src/components/showPDF/showPDF';
+import Education from './components/personalInfo/education';
 import './App.scss';
-import { Tabs, Radio } from 'antd';
 
-const { TabPane } = Tabs;
 export default class App extends React.Component {
-
-  state = { size: 'template1' };
-
-  onChange = e => {
-    this.setState({ size: e.target.value });
-  };
-
   render() {
-    const { size } = this.state;
+    const EducationForm = Form.create({ name: 'education' })(Education);
+
     return (
       <div>
         <ShowPDF/>  
+        <EducationForm/>
       </div>
     );
   }
