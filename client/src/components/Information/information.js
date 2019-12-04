@@ -3,7 +3,7 @@ import {
     Form,
     Button
 } from 'antd';
-import Education from "./education";
+import Educations from "./educations";
 import Work from "./work";
 import Skill from "./skill";
 import PersonalInfo from "./personalInfo";
@@ -43,7 +43,7 @@ export default class Information extends React.Component {
         return (
             <div>
                 <Form {...formItemLayout} onSubmit={this.handleSubmit}>
-                    <Education form={form} />
+                    <Educations form={form} />
                     <Work form={form} />
                     <Skill form={form} />
                     <PersonalInfo form={form} />

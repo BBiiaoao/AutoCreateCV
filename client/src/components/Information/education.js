@@ -20,7 +20,6 @@ let experienceId = 1;
 
 
 export default class Education extends React.Component {
-    state = {};
 
     remove = (k, type) => {
         const { form } = this.props;
@@ -62,6 +61,7 @@ export default class Education extends React.Component {
         }
     };
     render() {
+        const {flag}=this.props;
         const { getFieldDecorator, getFieldValue } = this.props.form;
         const formItemLayout = {
             labelCol: {
@@ -100,7 +100,7 @@ export default class Education extends React.Component {
                         message: "请输入成绩奖项或者移除此项",
                     },
                 ],
-            })(<Input style={{ width: '60%', marginRight: 8 }} />)}
+            })(<Input style={{ width: '60%', marginRight: 8 }} autoComplete="off"/>)}
                 {AchievementKeys.length > 1 ? (
                     <Icon
                         className="dynamic-delete-button"
@@ -126,7 +126,7 @@ export default class Education extends React.Component {
                         message: "请输入校园经历或者移除此项",
                     },
                 ],
-            })(<Input style={{ width: '60%', marginRight: 8 }} />)}
+            })(<Input style={{ width: '60%', marginRight: 8 }} autoComplete="off"/>)}
                 {ExperienceKeys.length > 1 ? (
                     <Icon
                         className="dynamic-delete-button"
@@ -137,14 +137,13 @@ export default class Education extends React.Component {
             </Form.Item>));
         return (
             <div>
-                <Title level={2}>教育经历</Title>
                 <Form.Item label="毕业院校">
-                    {getFieldDecorator('毕业院校', {
+                    {getFieldDecorator(`毕业院校${flag}`, {
                         rules: [{ required: true, message: '请填入毕业院校', whitespace: true }],
                     })(<Input autoComplete="off"/>)}
                 </Form.Item>
                 <Form.Item label="学历">
-                    {getFieldDecorator('学历', {
+                    {getFieldDecorator(`学历${flag}`, {
                         rules: [
                             { required: true, message: '请填入学历' },
                         ],
@@ -157,7 +156,7 @@ export default class Education extends React.Component {
                     </Select>)}
                 </Form.Item>
                 <Form.Item label="就读时间">
-                    {getFieldDecorator('就读时间', {
+                    {getFieldDecorator(`就读时间${flag}`, {
                         rules: [{ type: 'array', required: true, message: '请选择就读时间' }],
                     })(<RangePicker locale={locale} />)}
                 </Form.Item>
