@@ -135,7 +135,7 @@ export default class Skill extends React.Component {
             </Form.Item>));
         return (
             <div>
-                <Title level={2}>掌握技能</Title>
+                <Title level={2}>个人成绩</Title>
                 {SkillFormItems}
                 <Form.Item {...formItemLayoutWithOutLabel}>
                     <Button type="dashed" onClick={(e) => { this.add(e, "skill") }} style={{ width: '60%' }}>

@@ -84,11 +84,11 @@ export default class Education extends React.Component {
         const AchievementKeys = getFieldValue('AchievementKeys');
         const ExperienceKeys = getFieldValue('ExperienceKeys');
 
-        //成绩/证书
+        //成绩/奖项
         const AchievementFormItems = AchievementKeys.map((k, index) => (
             <Form.Item
                 {...(index === 0 ? formItemLayout : formItemLayoutWithOutLabel)}
-                label={index === 0 ? '成绩/证书' : ''}
+                label={index === 0 ? '成绩/奖项' : ''}
                 required={true}
                 key={k}
             >{getFieldDecorator(`achievement[${k}]`, {
@@ -97,7 +97,7 @@ export default class Education extends React.Component {
                     {
                         required: true,
                         whitespace: true,
-                        message: "请输入成绩证书或者移除此项",
+                        message: "请输入成绩奖项或者移除此项",
                     },
                 ],
             })(<Input style={{ width: '60%', marginRight: 8 }} />)}
@@ -141,7 +141,7 @@ export default class Education extends React.Component {
                 <Form.Item label="毕业院校">
                     {getFieldDecorator('毕业院校', {
                         rules: [{ required: true, message: '请填入毕业院校', whitespace: true }],
-                    })(<Input />)}
+                    })(<Input autoComplete="off"/>)}
                 </Form.Item>
                 <Form.Item label="学历">
                     {getFieldDecorator('学历', {
