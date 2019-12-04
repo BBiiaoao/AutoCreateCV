@@ -83,7 +83,6 @@ export default class Education extends React.Component {
         getFieldDecorator('ExperienceKeys', { initialValue: [0] });
         const AchievementKeys = getFieldValue('AchievementKeys');
         const ExperienceKeys = getFieldValue('ExperienceKeys');
-        console.log(AchievementKeys);
 
         //成绩/证书
         const AchievementFormItems = AchievementKeys.map((k, index) => (
@@ -122,7 +121,7 @@ export default class Education extends React.Component {
                 validateTrigger: ['onChange', 'onBlur'],
                 rules: [
                     {
-                        required: true,
+                        required: index === 0 ? false : true,
                         whitespace: true,
                         message: "请输入校园经历或者移除此项",
                     },

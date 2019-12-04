@@ -4,7 +4,7 @@ import {
     Button
 } from 'antd';
 import Education from "./education";
-
+import Work from "./work";
 
 
 export default class Information extends React.Component {
@@ -23,7 +23,7 @@ export default class Information extends React.Component {
     };
 
     render() {
-        const {form} = this.props;
+        const { form } = this.props;
 
         const formItemLayout = {
             labelCol: {
@@ -41,6 +41,7 @@ export default class Information extends React.Component {
             <div>
                 <Form {...formItemLayout} onSubmit={this.handleSubmit}>
                     <Education form={form} />
+                    <Work form={form} />
                     <Form.Item wrapperCol={{ span: 12, offset: 6 }}>
                         <Button type="primary" htmlType="submit">
                             Submit
