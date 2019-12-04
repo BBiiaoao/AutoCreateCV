@@ -5,6 +5,7 @@ import {
 } from 'antd';
 import Education from "./education";
 import Work from "./work";
+import Skill from "./skill";
 
 
 export default class Information extends React.Component {
@@ -42,6 +43,7 @@ export default class Information extends React.Component {
                 <Form {...formItemLayout} onSubmit={this.handleSubmit}>
                     <Education form={form} />
                     <Work form={form} />
+                    <Skill form={form} />
                     <Form.Item wrapperCol={{ span: 12, offset: 6 }}>
                         <Button type="primary" htmlType="submit">
                             Submit

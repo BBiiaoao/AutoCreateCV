@@ -93,7 +93,7 @@ export default class Work extends React.Component {
                 validateTrigger: ['onChange', 'onBlur'],
                 rules: [
                     {
-                        required: true,
+                        required: index === 0 ? false : true,
                         whitespace: true,
                         message: "请输入工作内容或者移除此项",
                     },
